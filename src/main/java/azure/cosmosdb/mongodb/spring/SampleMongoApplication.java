@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package azure.cosmos_db_mongodb_spring_geo_readpreference;
+package azure.cosmosdb.mongodb.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

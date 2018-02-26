@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 the original author or authors.
+ * Copyright 2012-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,16 +14,30 @@
  * limitations under the License.
  */
 
-package azure.cosmos_db_mongodb_spring_geo_readpreference;
+package azure.cosmosdb.mongodb.spring;
 
-import java.util.List;
+import org.springframework.data.annotation.Id;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+public class Customer {
 
-public interface CustomerRepository extends MongoRepository<Customer, String> {
+	@Id
+	private String id;
 
-	Customer findByFirstName(String firstName);
+	private String firstName;
+	private String lastName;
 
-	List<Customer> findByLastName(String lastName);
+	public Customer() {
+	}
+
+	public Customer(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Customer[id=%s, firstName='%s', lastName='%s']", id,
+				firstName, lastName);
+	}
 
 }
