@@ -25,19 +25,24 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SampleMongoApplication implements CommandLineRunner {
 
 	@Autowired
-	private CustomerRepository repository;
+	private ReadSecondaryCustomerRepository readRepository;
+	@Autowired
+	private ReadPrimaryCustomerRepository writeRepository;
 
 	public void run(String... args) throws Exception {
-		this.repository.deleteAll();
+
+		// Use WriteRepository to do some write operations
+		this.writeRepository.deleteAll();
 
 		// save a couple of customers
-		this.repository.save(new Customer("Alice", "Smith"));
-		this.repository.save(new Customer("Bob", "Smith"));
+		this.writeRepository.save(new Customer("Alice", "Smith"));
+		this.writeRepository.save(new Customer("Bob", "Smith"));
 
+		// Use ReadRepository to do some read operations
 		// fetch all customers
 		System.out.println("Customers found with findAll():");
 		System.out.println("-------------------------------");
-		for (Customer customer : this.repository.findAll()) {
+		for (Customer customer : this.readRepository.findAll()) {
 			System.out.println(customer);
 		}
 		System.out.println();
@@ -45,11 +50,11 @@ public class SampleMongoApplication implements CommandLineRunner {
 		// fetch an individual customer
 		System.out.println("Customer found with findByFirstName('Alice'):");
 		System.out.println("--------------------------------");
-		System.out.println(this.repository.findByFirstName("Alice"));
+		System.out.println(this.readRepository.findByFirstName("Alice"));
 
 		System.out.println("Customers found with findByLastName('Smith'):");
 		System.out.println("--------------------------------");
-		for (Customer customer : this.repository.findByLastName("Smith")) {
+		for (Customer customer : this.readRepository.findByLastName("Smith")) {
 			System.out.println(customer);
 		}
 	}
