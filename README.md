@@ -16,7 +16,10 @@ Azure Cosmos DB is a globally distributed multi-model database. One of the suppo
 
 * Then, clone this repository.
 
-* Next, substitute the `spring.data.mongodb.uri` in *src\main\resources\application.properties* with your Cosmos DB account's values. 
+* Next, substitute the `spring.data.mongodb.uri` in *src\main\resources\application.properties* with your Cosmos DB account's values.
+
+> [!NOTE]
+> If the key string used in the MongoDB URI contains special characters, such as plus signs, use the URL-encoded value of that key. Otherwise, you may face issues trying to connect and see errors pertaining to SASL Authentication failure. This is especially true when working with [Azure Cosmos DB Emulator](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator) over a local network.
 
 * Run your application.
 
