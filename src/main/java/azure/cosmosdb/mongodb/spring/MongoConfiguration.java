@@ -30,7 +30,7 @@ public class MongoConfiguration {
 	 * @return A generic Mongo instance pointed at the hosts.
 	 * @throws Exception
 	 */
-	private Mongo createMongo() throws Exception {
+	private MongoClient createMongo() throws Exception {
 		return new MongoClient(new MongoClientURI(mongoUri));
 	}
 
@@ -44,14 +44,14 @@ public class MongoConfiguration {
 	}
 
 	@Bean
-	public Mongo readFromPrimaryMongo() throws Exception {
-		final Mongo mongo = createMongo();
+	public MongoClient readFromPrimaryMongo() throws Exception {
+		final MongoClient mongo = createMongo();
 		mongo.setReadPreference(ReadPreference.primaryPreferred());
 		return mongo;
 	}
 
 	@Bean
-	public MongoDbFactory mongoDbFactory(Mongo mongo) {
+	public MongoDbFactory mongoDbFactory(MongoClient mongo) {
 		return new SimpleMongoDbFactory(mongo, "springgeo");
 	}
 }

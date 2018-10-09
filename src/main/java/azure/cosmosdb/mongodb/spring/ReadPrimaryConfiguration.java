@@ -1,5 +1,6 @@
 package azure.cosmosdb.mongodb.spring;
 
+import com.mongodb.MongoClient;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +21,7 @@ import com.mongodb.Mongo;
 public class ReadPrimaryConfiguration {
 	@Bean
 	public MongoTemplate readPrimaryTemplate(
-			@Qualifier("readFromPrimaryMongo") Mongo mongo
+			@Qualifier("readFromPrimaryMongo") MongoClient mongo
 			) throws Exception {
 		final MongoDbFactory factory =
 				new SimpleMongoDbFactory(mongo, "springgeo");
