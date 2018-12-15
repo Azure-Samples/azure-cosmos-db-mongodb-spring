@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>azure</groupId>
-    <artifactId>cosmos-db-mongodb-spring</artifactId>
+    <artifactId>azure-cosmos-db-for-mongodb-api-spring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Spring Framework sample for Azure CosmosDB with MongoDB API</name>
+    <name>SpringBoot Framework sample for Azure CosmosDB for MongoDB API</name>
     <url>https://azure.microsoft.com/en-us/services/cosmos-db/</url>
 
     <properties>

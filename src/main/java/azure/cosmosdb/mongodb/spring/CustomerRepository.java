@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package azure.cosmosdb.mongodb.spring;
+package azure.cosmosdb.for.mongodb.api.spring;
 
 import java.util.List;
 
