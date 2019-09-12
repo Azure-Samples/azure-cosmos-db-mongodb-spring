@@ -1,7 +1,11 @@
 ---
-services: cosmos-db
-platforms: spring
-author: sivethe
+page_type: sample
+languages:
+- java
+products:
+- azure
+description: "Azure Cosmos DB is a fully managed globally distributed, multi-model database service, transparently replicating your data across any number of Azure regions."
+urlFragment: azure-cosmos-db-mongodb-spring
 ---
 
 # Developing a SpringBoot app using Azure Cosmos DB for MongoDB API
