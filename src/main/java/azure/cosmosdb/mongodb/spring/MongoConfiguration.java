@@ -1,4 +1,4 @@
-package azure.cosmosdb.mongodb.spring;
+package azure.cosmosdb.for.mongodb.api.spring;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -18,16 +18,10 @@ public class MongoConfiguration {
 	private String mongoUri;
 
 	/**
-	 * Creates a base Mongo instance that can be configured for each
+	 * Creates a base instance that can be configured for each
 	 * implementation.
 	 *
-	 * NOTE: If you are trying to connect to multiple MongoDB's then
-	 * you would want to create 2 instances of this method as beans
-	 * loading the correct mongo hosts. For my implementation I just
-	 * wanted different global configurations pointed at the same
-	 * database.
-	 *
-	 * @return A generic Mongo instance pointed at the hosts.
+	 * @return A generic instance pointed at the hosts.
 	 * @throws Exception
 	 */
 	private Mongo createMongo() throws Exception {

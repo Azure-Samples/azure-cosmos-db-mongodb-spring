@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package azure.cosmosdb.mongodb.spring;
+package azure.cosmosdb.for.mongodb.api.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
