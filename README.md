@@ -29,8 +29,7 @@ Before you can run this sample, you must have the following prerequisites:
     spring.data.mongodb.uri=mongodb://<account-name>:<account-key>@<account-name>.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@<account-name>@
     ```
 
-    > [!NOTE]
-    > If the key string used in the MongoDB URI contains special characters, such as plus signs, use the URL-encoded value of that key. Otherwise, you may face issues trying to connect and see errors pertaining to SASL Authentication failure. This is especially true when working with [Azure Cosmos DB Emulator](https://docs.microsoft.com/azure/cosmos-db/local-emulator) over a local network.
+    > *If the key string used in the MongoDB URI contains special characters, such as plus signs, use the URL-encoded value of that key. Otherwise, you may face issues trying to connect and see errors pertaining to SASL Authentication failure. This is especially true when working with [Azure Cosmos DB Emulator](https://docs.microsoft.com/azure/cosmos-db/local-emulator) over a local network.*
 
 1. Create a new database in your Azure Cosmos DB account.
 
